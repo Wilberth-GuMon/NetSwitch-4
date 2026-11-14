@@ -1,0 +1,26 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Wed Nov 11 15:22:03 2026
+| Host         : Wilcho running 64-bit major release  (build 9200)
+| Command      : report_cdc -details -file reports/ooc_modules/cdckit_pulse_sync_ref_cdc.rpt
+| Design       : cdckit_pulse_sync
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+CDC Report
+
+ID     Severity  Count  Description
+-----  --------  -----  ------------------------------------------
+CDC-3  Info          1  1-bit synchronized with ASYNC_REG property
+
+Source Clock: clk_src_i
+Destination Clock: clk_dst_i
+CDC Type: No Common Primary Clock
+
+Row  ID     Severity  Description                                 Depth  Exception            Source (From)  Destination (To)
+---  -----  --------  ------------------------------------------  -----  -------------------  -------------  ----------------------
+  1  CDC-3  Info      1-bit synchronized with ASYNC_REG property      2  Asynch Clock Groups  tgl_q_reg/C    u_sync/s_q_reg[0][0]/D
+

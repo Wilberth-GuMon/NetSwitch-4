@@ -1,0 +1,62 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Wed Nov 11 15:22:04 2026
+| Host         : Wilcho running 64-bit major release  (build 9200)
+| Command      : report_methodology -file reports/ooc_modules/cdckit_pulse_sync_ref_meth.rpt
+| Design       : cdckit_pulse_sync
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: cdckit_pulse_sync
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max checks: <unlimited>
+             Checks found: 4
++-----------+----------+------------------------------------------+--------+
+| Rule      | Severity | Description                              | Checks |
++-----------+----------+------------------------------------------+--------+
+| TIMING-24 | Warning  | Overridden Max delay datapath only       | 1      |
+| XDCH-2    | Warning  | Same min and max delay values on IO port | 3      |
++-----------+----------+------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+TIMING-24#1 Warning
+Overridden Max delay datapath only  
+An asynchronous set_clock_groups or a set_false path (see constraint position 3 in the Timing Constraints window in Vivado IDE) between clocks clk_src_i and clk_dst_i overrides a set_max_delay -datapath_only (position 8). It is not recommended to override a set_max_delay -datapath_only constraint. Replace the set_clock_groups or set_false_path between clocks with point-to-point set_false_path constraints
+Related violations: <none>
+
+XDCH-2#1 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'pulse_src_i' relative to clock clk_src_i for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock clk_src_i 0.000 [get_ports {rst_src_ni pulse_src_i}]
+D:/Portafolio/NetSwitch-4/Clock-Domain-Crossing-Kit/reports/ooc_modules/cdckit_pulse_sync_ref_clocks.xdc (Line: 6)
+Related violations: <none>
+
+XDCH-2#2 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'rst_dst_ni' relative to clock clk_dst_i for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock clk_dst_i 0.000 [get_ports rst_dst_ni]
+D:/Portafolio/NetSwitch-4/Clock-Domain-Crossing-Kit/reports/ooc_modules/cdckit_pulse_sync_ref_clocks.xdc (Line: 7)
+Related violations: <none>
+
+XDCH-2#3 Warning
+Same min and max delay values on IO port  
+The same input delay of 0.000 ns has been defined on port 'rst_src_ni' relative to clock clk_src_i for both max and min. Make sure this reflects the design intent.
+set_input_delay -clock clk_src_i 0.000 [get_ports {rst_src_ni pulse_src_i}]
+D:/Portafolio/NetSwitch-4/Clock-Domain-Crossing-Kit/reports/ooc_modules/cdckit_pulse_sync_ref_clocks.xdc (Line: 6)
+Related violations: <none>
+
+

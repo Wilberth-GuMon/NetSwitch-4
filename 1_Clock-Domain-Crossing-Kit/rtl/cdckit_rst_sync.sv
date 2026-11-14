@@ -1,0 +1,24 @@
+// -----------------------------------------------------------------------------
+// cdckit_rst_sync.sv
+// Reset synchronizer: asynchronous assertion, synchronous release
+// -----------------------------------------------------------------------------
+module cdckit_rst_sync #(
+  parameter int unsigned NUM_STAGES = 2
+) (
+  input  logic clk_i,
+  input  logic arst_ni,
+  output logic rst_no
+);
+
+  cdckit_sync #(
+    .WIDTH      (1),
+    .NUM_STAGES (NUM_STAGES),
+    .RESET_VAL  (1'b0)
+  ) u_sync (              // [FUNC-3]
+    .clk_i  (clk_i),
+    .rst_ni (arst_ni),    // [MAS-RST-1]
+    .d_i    (1'b1),       // [MAS-RST-2]
+    .q_o    (rst_no)
+  );
+
+endmodule : cdckit_rst_sync

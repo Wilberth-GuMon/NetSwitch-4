@@ -1,0 +1,24 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2026.1 (win64) Build 6511674 Tue Jun 16 11:02:23 MDT 2026
+| Date         : Fri Nov  6 18:30:03 2026
+| Host         : Wilcho running 64-bit major release  (build 9200)
+| Command      : report_exceptions -ignored -file reports/ooc/exceptions.rpt
+| Design       : cdckit_impl_top
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Exceptions Report
+
+Position  From                                                          Through         To                                                  Setup           Hold            Status                         
+--------  ------------------------------------------------------------  --------------  --------------------------------------------------  --------------  --------------  -------------------------------
+15        [get_cells tgl_q_reg]                                         *               [get_cells {u_sync/s_q_reg[0][0]}]                  max_dpo=4       -               Totally overridden path by CG 3
+16        [get_cells {current_state_reg[1]}]                            *               [get_cells {u_sync_req/s_q_reg[0][0]}]              max_dpo=4       -               Totally overridden path by CG 3
+17        [get_cells ack_q_reg]                                         *               [get_cells {u_sync_ack/s_q_reg[0][0]}]              max_dpo=6.4     -               Totally overridden path by CG 3
+18        [get_cells {hold_q_reg[*]}]                                   *               [get_cells {dst_data_q_reg[*]}]                     max_dpo=4       -               Totally overridden path by CG 3
+19        [get_cells {u_wptr/wgray_q_reg[*]}]                           *               [get_cells {u_sync_w2r/s_q_reg[0][*]}]              max_dpo=6.4     -               Totally overridden path by CG 3
+21        [get_cells {u_rptr/rgray_q_reg[*]}]                           *               [get_cells {u_sync_r2w/s_q_reg[0][*]}]              max_dpo=4       -               Totally overridden path by CG 3
+23        [get_cells -quiet -hierarchical -filter {REF_NAME =~ RAMD*}]  *               [get_clocks -quiet -of_objects [get_ports rclk_i]]  max_dpo=4       -               Totally overridden path by CG 3
+
