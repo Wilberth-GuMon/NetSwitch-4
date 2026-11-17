@@ -13,7 +13,6 @@ A parameterizable library of five clock-domain-crossing primitives (level, reset
 | **SVA checkers** | Assertions for single-bit pointer change, no push when full, no pop when empty, handshake ordering, and minimum pulse spacing, kept in a separate file and bound in the verification phase. |
 | **Synthesis-aware RTL** | Synchronizer flops are protected from retiming and shift-register packing, and the Gray pointer registers from merging with their binary twins (identical MSB). That merge is silent and breaks the one-bit-change guarantee the whole FIFO relies on. |
 | **Shared package** | A single package holds the binary-to-Gray and Gray-to-binary conversions, so both FIFO pointer managers reuse one verified implementation and a width or encoding change touches one file. |
-| **Embedded SVA** | Bound assertions for single-bit pointer change, no push when full, no pop when empty, handshake ordering, and minimum pulse spacing, kept out of the design source. |
  
 📂 Project Repository: [Clock Domain Crossing Kit](https://github.com/Wilberth-GuMon/NetSwitch-4/blob/main/1_Clock-Domain-Crossing-Kit)
 
